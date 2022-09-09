@@ -1,0 +1,60 @@
+
+.goal-button{
+    display: flex; 
+    justify-content:center; 
+    align-items:center;
+    width: 100rem;
+    margin-top: 1rem;
+    margin-left: 20rem;
+}
+
+::ng-deep  .p-button-lg {
+    width: 100rem;
+    display: flex; 
+    justify-content:center; 
+    align-items:center;
+}
+
+@import  url(https://fonts.googleapis.com/css?family=Montserrat);
+
+$button-bg-color: #3B82F6;
+$button-border-color: white;
+
+body{
+  font-family: Montserrat;
+}
+
+
+
+.button{
+  display: inline-block;
+  padding: 15px;
+  margin-top: 2rem;
+  margin-left: 29rem;
+  height: 3rem;
+  min-width: 100px;
+  width: 58rem;
+  background: $button-bg-color;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 3px;
+  box-shadow: 0 5px 0px darken($button-bg-color,0%);
+  border-bottom: 2px solid darken($button-bg-color,3%);
+  
+  &:hover{
+    background: darken($button-bg-color,5%);
+    box-shadow: 0 4px 1px darken($button-bg-color,10%);
+    border-bottom: 2px solid darken($button-bg-color,10%);
+    transition: all 0.1s ease-in;
+  }
+  
+  &:active{
+    transform:translateY(4px);
+    border-bottom-width: 2px;
+    box-shadow: none;
+  }
+}

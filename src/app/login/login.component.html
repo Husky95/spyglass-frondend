@@ -1,0 +1,29 @@
+<p-toast></p-toast>
+
+<div class="box-form">
+	<div class="left">
+		<div class="overlay">
+		<h1>Spyglass  </h1>
+        <br>
+		<h3>Discipline is the bridge between goals and accomplishment.
+
+        </h3>
+		
+		</div>
+	</div>
+	
+	<form name="form" (ngSubmit)="login()" #f="ngForm">
+		<div class="right">
+            <h5>Login</h5>
+            <p>Don't have an account? <a [routerLink]="['/signup']">Create Your Account</a>
+            <div class="inputs">
+                <input ype="text" name="username" [(ngModel)]="model.username" #username="ngModel" placeholder="Username" required>
+                <br>
+                <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" placeholder="Password" required>
+            </div>        
+                <br><br>
+                <br>
+                <button  class="btn transparent">Login</button>
+	    </div>
+    </form>
+</div>

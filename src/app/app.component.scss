@@ -1,0 +1,19 @@
+:host {
+    height: 100%;
+    width : 100%;
+}
+
+::ng-deep .p-menubar{
+    border-radius: 0rem;
+    margin-bottom: 1rem ;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    
+    
+}
+:host ::ng-deep .p-menubar .p-submenu-list{
+    width: 90%;
+}
+
+::ng-deep .p-menubar .p-menuitem{
+    margin-left: 99rem;
+}

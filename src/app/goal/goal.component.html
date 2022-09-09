@@ -1,0 +1,42 @@
+<p-toast></p-toast>
+
+<app-update-goal (test)="test()" ></app-update-goal>
+<div class="card-container" >
+    <div class="container">
+        <img class="product__img" [src]="imageSrc">
+    </div>
+    <div class="product__info" role="header">
+
+        <h3 class="product__title" aria-label="product name">{{ name}}</h3>
+        <p class="product__description">Description : {{ description }}</p>
+        <p class="product__description">Target Date : {{ targetDate }}</p>
+
+        <p class="product__description">Target Amount: {{ targetAmount }} USD</p>
+        <p class="product__description">Current Amount : {{ currentAmount }} USD</p>
+        <div class="progress-bar-container">
+            <p-progressBar [value]="percent"></p-progressBar>
+        </div>
+            <div class="card-button-container">
+                <span class="p-buttonset">
+                    <button pButton type="button" label="Update" icon="pi pi-external-link"   (click)="updateGoal(id,name,description,targetDate,targetAmount,currentAmount,imageSrc)" class="p-button-sm"></button>
+                    <button pButton type="button" label="Deposit" icon="pi pi-money-bill" (click)="openDeposit()" class=" p-button-success p-button-sm"></button>
+                    <button pButton type="button" label="Delete" icon="pi pi-trash" class="p-button-sm" (click)="deleteGoal(id)"></button>
+                </span>
+            </div>
+    </div>
+</div>
+
+<p-dialog [(visible)]="displayDeposit" header="Make A Deposit"  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '20vw'}">
+    <div class="col-12 md:col-4">
+        <h4>Deposit</h4>
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">$</span>
+            <input type="text" [(ngModel)]="depositAmount" pInputText placeholder="Deposit">   
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton type="button" label="Deposit" icon="pi pi-check" (click)="deposit(depositAmount)" class="p-button p-button-md"></button>
+        <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="closeDeposit()" class=" p-button-danger p-button-md"></button>
+    </ng-template>
+
+</p-dialog>

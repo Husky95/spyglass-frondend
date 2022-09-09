@@ -1,0 +1,86 @@
+<p-toast></p-toast>
+
+<input class="button" type="button" value="Create A Goal"  (click)="showCreateDialog()" icon="pi pi-plus">
+<!--
+<p-button   class="p-button-lg" (click)="showCreateDialog()" icon="pi pi-plus" label="Create A Goal"></p-button>
+-->
+
+
+<p-dialog header="Create A Goal"  [(visible)]="display" [style]="{ width: '40vw', height: '90vh'}" [baseZIndex]="10000">
+    <form [formGroup]="goalForm" >
+
+        <div class="p-field p-col-12 p-md-2">
+            <h4>Goal Name</h4>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-star"></i></span>
+                <input type="text" id="goal_name" formControlName="name" [(ngModel)]="this.dialogGoal.name"  class="p-inputtext-sm" placeholder="Name" pInputText />
+            </div>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+            <h4>Goal Description</h4>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
+                <input type="text"  id="goal_description" formControlName="description" class="p-inputtext-sm" placeholder="Short Description    " pInputText />
+            </div>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+            <h4>Goal Date</h4>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-calendar"></i></span>
+                <p-calendar inputId="basic"  id="goal_date" formControlName="target_date"  [(ngModel)]="target_date" class="p-inputtext-sm" placeholder="Date" ></p-calendar>
+            </div>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+            <h4>Target Amount</h4>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">$</span>
+                <input type="text" id="goal_target_amount" formControlName="target_amount"  [(ngModel)]="this.target_amount"  pInputText placeholder="Price" class="p-inputtext-sm">    
+            </div>
+        </div>
+
+        <div class="p-field p-col-12 p-md-4">
+            <h4>Current Amount</h4>
+            <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">$</span>
+                <input type="text" id="goal_current_amount" formControlName="current_amount"  [(ngModel)]="this.current_amount" pInputText placeholder="Deposit Amount" class="p-inputtext-sm">    
+            </div>
+        </div>
+
+        
+        
+        <div class="p-field p-col-12 p-md-4">
+            <h4>Image Source</h4>
+
+            
+            <br>
+            
+            <div    class="p-inputgroup">
+                <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
+                <input type="text" id="goal_imageSrc" formControlName="imageSrc"  class="p-inputtext-sm" placeholder="Upload by Image URL" pInputText />
+            </div>
+           
+        </div>
+        <h4> Or Upload by Local Image </h4>
+        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" accept="image/*" >
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+        
+
+        <div class="p-field p-col-12 p-md-4" *ngIf="false" >
+            <input type="text" id="goal_id" formControlName="id"  class="p-inputtext-sm" placeholder="ID" pInputText />
+        </div>
+    </form>
+
+    <ng-template pTemplate="footer">
+        <button pButton  *ngIf="createFlag" type="button" label="Create" icon="pi pi-check" (click)="onCreateSubmit()" class="p-button p-button-md"></button>
+        <button pButton  *ngIf="!createFlag" type="button" label="Update" icon="pi pi-check" (click)="onUpdateSubmit()" class="p-button p-button-md"></button>
+
+        <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="closeDialog()" class=" p-button-danger p-button-md"></button>
+    </ng-template>

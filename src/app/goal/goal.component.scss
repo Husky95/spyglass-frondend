@@ -1,0 +1,91 @@
+.product__img {
+    width: 40%;
+    height: 20%;
+    object-fit: cover;
+    box-shadow: 0 0px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 8rem;
+
+  }
+  .product__info {
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: inline-flex;
+    width: 100%;
+
+  }
+  .product__title {
+    font-family: sans-serif;
+    font-size: 1em;
+    width: 200px;
+    color: #fff;
+    margin: 0;
+  }
+  .product__title h3{
+    margin: 0;
+  }
+  .product__description {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 4px 0 0 0;
+    font-size: 0.75em;
+  }
+  .product__description p {
+    margin: 0;
+  }
+  .product__price {
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 0.75em;
+    color: #fff;
+    font-weight: 800;
+  }
+  .product__price p {
+    margin: 0;
+  }
+  
+  .card-container{
+    display: inline-block;
+    flex-direction: column;
+    width: 23%;
+    height: 10%;
+    background-color: #941b21;
+    margin: 1em;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-left: 19rem;
+    margin-top: 2rem;
+  }
+
+  .progress-bar-container{
+    width: 100%;
+    margin-top: .5rem;
+    margin-bottom : .5rem;
+  }
+  
+  .card-button-container{
+    width: 100%;
+    padding-left: 2.5rem;
+  }
+
+
+
+::ng-deep .p-button-sm{
+    height: 2rem;
+}
+
+::ng-deep .p-button-md{
+    height: 2.5rem;
+}
+
+::ng-deep h4{
+    margin-bottom: 1rem;
+}
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    background-color: #CFD2CF;
+  }
