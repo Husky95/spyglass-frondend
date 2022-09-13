@@ -7,7 +7,9 @@ import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [MessageService]
+
 })
 export class HomeComponent implements OnInit {
   goalArray : Goals[] = []
@@ -39,14 +41,33 @@ export class HomeComponent implements OnInit {
       (response)=>{
         if (response.status === 200) {
           this.goalArray = response.body;
-          console.log(this.goalArray)
         } else {
           this.messageService.add({severity:'error', summary: 'Error', detail: 'GET request faild to get Goals value'});
         }
       });
-   
   }
-  logout(){
-    
+  getGoalsUpdate(){
+    this.goalsService.get().subscribe( 
+      (response)=>{
+        if (response.status === 200) {
+          this.goalArray = response.body;
+          this.messageService.add({severity:'success', summary: 'success', detail: 'Info Update Successfully'});
+        } else {
+          this.messageService.add({severity:'error', summary: 'Error', detail: 'GET request faild to get Goals value'});
+        }
+      });
   }
+
+  getGoalsDeposit(){
+    this.goalsService.get().subscribe( 
+      (response)=>{
+        if (response.status === 200) {
+          this.goalArray = response.body;
+          this.messageService.add({severity:'success', summary: 'success', detail: 'Deposit Successfully'});
+        } else {
+          this.messageService.add({severity:'error', summary: 'Error', detail: 'GET request faild to get Goals value'});
+        }
+      });
+  }
+
 }

@@ -26,6 +26,7 @@ import { RequestInterceptor } from './request.interceptor';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
     HomeComponent,
     UpdateGoalComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

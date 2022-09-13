@@ -24,7 +24,8 @@ export class GoalComponent implements OnInit {
   @Input() imageSrc: string = '';
   @ViewChild(UpdateGoalComponent) childDialog!: UpdateGoalComponent;
   @Output("getGoals") getGoals : EventEmitter<any> = new EventEmitter();
-  
+  @Output("getGoalsDeposit") getGoalsDeposit : EventEmitter<any> = new EventEmitter();
+
   result : Goals = new Goals(-1, " ", " ", new Date("2014-01-16"),-1, -1," ","",-1 )
   displayDeposit: boolean = false;
   percent: number = 0
@@ -89,7 +90,7 @@ export class GoalComponent implements OnInit {
         if (response.status === 201) {
           console.log(response.body)
           this.messageService.add({severity:'success', summary: 'Success', detail: 'Depost Successfully'});
-          this.getGoals.emit();
+          this.getGoalsDeposit.emit();
           this.closeDeposit();
         } else {
           this.messageService.add({severity:'error', summary: 'Error', detail: 'Something Wrong , Try Again '});

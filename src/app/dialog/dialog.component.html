@@ -55,7 +55,6 @@
             <h4>Image Source</h4>
 
             
-            <br>
             
             <div    class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
@@ -63,8 +62,9 @@
             </div>
            
         </div>
+        
         <h4> Or Upload by Local Image </h4>
-        <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" accept="image/*" >
+        <p-fileUpload   name="myfile[]" [customUpload]="true"  (uploadHandler)="onUpload($event)"  accept="image/*" >
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>

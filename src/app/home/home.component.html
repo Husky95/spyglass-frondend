@@ -1,4 +1,5 @@
 
+<p-toast></p-toast>
 
 		<header class="nav__bar__header">
 			
@@ -16,14 +17,12 @@
             <a *ngIf="false" href="#">Home</a>
 
 					</li>
-					<li>
-						<a class="not-active"href="#">About</a>
-					</li>
+					
 					<li>
 						<a   class="not-active" [routerLink]="['/login']">Logout</a>
 					</li>
 					<li>
-						<a   class="user">{{username}}</a>
+						<a   class="user">Current User : {{username}}</a>
 					</li>
 				</ul>
 			</nav>
@@ -38,7 +37,7 @@
 
     <ng-container   class="component__container"  *ngFor="let goalObject of goalArray ">
   
-      <app-goal class="component__goal" (getGoals)="getGoals()"
+      <app-goal class="component__goal" (getGoalsDeposit)="getGoalsDeposit()" (getGoals)="getGoalsUpdate()"
         [id]="goalObject.id"
         [name]="goalObject.name"
         [description]="goalObject.description"
@@ -51,4 +50,5 @@
       </ng-container>
 
   </section>
+
   

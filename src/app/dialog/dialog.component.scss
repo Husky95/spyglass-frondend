@@ -58,3 +58,73 @@ body{
     box-shadow: none;
   }
 }
+
+
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload {
+  display: flex;
+  height: 50px;
+}
+
+.filename {
+  display: flex;
+  box-shadow: inset 0 0 0 1px #ccc;
+  height: 50px;
+  width: 400px;
+  align-items: center;
+  padding: 0 12px 0 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.browse {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+}
+
+input[type="file"] {
+  position: absolute;
+  right: 0;
+  width: 575px;
+  line-height: 50px;
+  opacity: 0;
+  -moz-opacity: 0;
+  -webkit-opacity: 0;
+  cursor: pointer;
+  outline: solid 2px red;
+}
+
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+  padding: 0 2rem 0 2rem;
+  background: #ccc;
+}
+
+label > span {
+  color: white;
+  line-height: 50px;
+}
+
+button[type="submit"] {
+  background: red;
+  height: 50px;
+  color: white;
+  padding: 0 50px 0 50px;
+  margin-left: 10px;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+}
