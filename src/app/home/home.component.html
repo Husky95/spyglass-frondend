@@ -1,33 +1,7 @@
 
 <p-toast></p-toast>
-
-		<header class="nav__bar__header">
-			
-			<input type="checkbox" id="check">
-			<label for="check" class="check__btn">
-			<i class="fas fa-bars"></i>
-			</label>
-			
-			<div class="logo"></div>
-			
-			<nav class="header__menu__nav">
-				<ul class="nav__list">
-					<li>
-						<a  class="active" href="#">Home</a>
-            <a *ngIf="false" href="#">Home</a>
-
-					</li>
-					
-					<li>
-						<a   class="not-active" [routerLink]="['/login']">Logout</a>
-					</li>
-					<li>
-						<a   class="user">Current User : {{username}}</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
+<app-topbar [homeFlag]="true" [analyticsFlag]="false" ></app-topbar>
+	
 
 
 

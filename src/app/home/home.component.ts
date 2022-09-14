@@ -16,24 +16,11 @@ export class HomeComponent implements OnInit {
   constructor(private goalsService : GoalsService, private messageService: MessageService, private loginService:LoginService) { }
   
 
-  items!: MenuItem[];
-  title = 'spyglass';
-  username! : string;
+  
 
   ngOnInit(): void {
     this.getGoals()
-    this.username = this.loginService.currentUsername;
-    this.items = [
-       
-      {
-          label: 'Account',
-          icon: 'pi pi-fw pi-user',
-          items: [
-              {label: 'Logout', icon: 'pi pi-fw pi-refresh'}
-          ]
-      }
-
-  ];
+  
 
   }
   getGoals(){

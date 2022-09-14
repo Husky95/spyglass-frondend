@@ -29,7 +29,7 @@ export class DialogComponent implements OnInit {
   checked1: boolean = false;
   imageS3URL : string = "";
   localUpload : boolean = false;
-
+  localUploadDisplay : boolean = false;
   goalForm: FormGroup | any;
   goalInfo : any;
 
@@ -176,6 +176,11 @@ uploadSelect(){
   }
   console.log(this.checked1)
 
+}
+setting(){
+  this.localUploadDisplay = !this.localUploadDisplay
+
+  console.log(this.localUploadDisplay);
 }
 
 }

@@ -27,6 +27,10 @@ import {SelectButtonModule} from 'primeng/selectbutton';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import { AboutComponent } from './about/about.component';
+import { AnalyticsComponent } from './analytics/analytics.component';
+import {StyleClassModule} from 'primeng/styleclass';
+import { TopbarComponent } from './topbar/topbar.component';
+import {TableModule} from 'primeng/table';
 
 
 @NgModule({
@@ -38,7 +42,9 @@ import { AboutComponent } from './about/about.component';
     UpdateGoalComponent,
     LoginComponent,
     SignupComponent,
-    AboutComponent
+    AboutComponent,
+    AnalyticsComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,9 @@ import { AboutComponent } from './about/about.component';
     ToastModule,
     SelectButtonModule,
     FileUploadModule,
-    ToggleButtonModule
+    ToggleButtonModule,
+    StyleClassModule,
+    TableModule,
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}],
   bootstrap: [AppComponent]

@@ -1,0 +1,32 @@
+<header class="nav__bar__header">
+			
+    <input type="checkbox" id="check">
+    <label for="check" class="check__btn">
+    <i class="fas fa-bars"></i>
+    </label>
+    
+    <div class="logo"></div>
+    
+    <nav class="header__menu__nav">
+        <ul class="nav__list">
+            <li>
+                <a class="active"     *ngIf="homeFlag"  >Home</a>
+                <a class="not-active" *ngIf="!homeFlag" (click)="changeActive('analytics')" [routerLink]="['/home']" >Home</a>
+            </li>
+
+            <li>
+                <a  class="active"     *ngIf="analyticsFlag" >Analytics</a>
+                <a  class="not-active" *ngIf="!analyticsFlag" (click)="changeActive('analytics')"  [routerLink]="['/analytics']" >Analytics</a>
+
+            </li>
+            
+            
+            <li>
+                <a   class="not-active" [routerLink]="['/login']">Logout</a>
+            </li>
+            <li>
+                <a   class="user">Current User : {{username}}</a>
+            </li>
+        </ul>
+    </nav>
+</header>

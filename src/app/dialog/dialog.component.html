@@ -54,17 +54,16 @@
         <div class="p-field p-col-12 p-md-4">
             <h4>Image Source</h4>
 
+            <p-toggleButton (click)="setting()" onLabel="Image File" offLabel="Image URL" onIcon="pi pi-image" offIcon="pi pi-link" [style]="{'height': '2.5em','width': '10em'}"></p-toggleButton>
             
-            
-            <div    class="p-inputgroup">
+            <div *ngIf ="!localUploadDisplay"   class="p-inputgroup">
                 <span class="p-inputgroup-addon"><i class="pi pi-book"></i></span>
                 <input type="text" id="goal_imageSrc" formControlName="imageSrc"  class="p-inputtext-sm" placeholder="Upload by Image URL" pInputText />
             </div>
            
         </div>
         
-        <h4> Or Upload by Local Image </h4>
-        <p-fileUpload   name="myfile[]" [customUpload]="true"  (uploadHandler)="onUpload($event)"  accept="image/*" >
+        <p-fileUpload  *ngIf ="localUploadDisplay"  name="myfile[]" [customUpload]="true"  (uploadHandler)="onUpload($event)"  accept="image/*" >
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
